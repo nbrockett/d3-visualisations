@@ -3,7 +3,6 @@ var margin = {top: 30, right: 30, bottom: 70, left: 60};
 var width = 800 - margin.left - margin.right;
 var height = 600 - margin.top - margin.bottom;
 
-// append the svg object to the body of the page
 var svg = d3.select("#barplot")
   .append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -27,11 +26,11 @@ d3.csv("data.csv").then(function(data)
       .call(d3.axisBottom(x))
       .selectAll("text")
 
-    // x label
-    svg.append("text")
-        .attr("transform", "translate(" + (width/2) + " ," + (height + margin.top + 20) + ")")
-        .style("text-anchor", "middle")
-        .text("Name");
+  // x label
+  svg.append("text")
+      .attr("transform", "translate(" + (width/2) + " ," + (height + margin.top + 20) + ")")
+      .style("text-anchor", "middle")
+      .text("Name");
 
   // y axis
   var y = d3.scaleLinear()
@@ -48,7 +47,6 @@ d3.csv("data.csv").then(function(data)
       .attr("x", - (height/2))
       .style("text-anchor", "middle")
       .text("Value"); 
-            
 
   // create bars
   svg.selectAll("mybar")

@@ -57,6 +57,7 @@ d3.csv("data.csv").then(function(data) {
   svg.append("text")
       .attr("transform", "translate(" + (width/2) + " ," + (height + margin.top + 20) + ")")
       .style("text-anchor", "middle")
+      .attr("font-family", function(d,i) {return "Source Sans Pro"})
       .text("Time");
 
   // y label
@@ -69,6 +70,7 @@ d3.csv("data.csv").then(function(data) {
       .attr("y", - 3*margin.left/4)
       .attr("x", - (height/2))
       .style("text-anchor", "middle")
+      .attr("font-family", function(d,i) {return "Source Sans Pro"})
       .text("Value"); 
 
 });
